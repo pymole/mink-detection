@@ -17,17 +17,15 @@ def convert_to_jpg(src, dest):
 
 
 def main(args):
-    os.makedirs(args.output, exist_ok=True)
-
     p = Augmentor.Pipeline(args.input, output_directory=args.output)
 
     p.flip_left_right(probability=1.0)
     p.process()
 
     # move original images to output directory
-    for image_name in glob.glob(os.path.join(args.input, '*.jpg')):
-        image_to = os.path.join(args.output, os.path.basename(image_name))
-        shutil.copyfile(image_name, image_to)
+    for image_path in glob.glob(os.path.join(args.input, '*.jpg')):
+        image_to = os.path.join(args.output, os.path.basename(image_path))
+        shutil.copyfile(image_path, image_to)
 
 
 if __name__ == '__main__':
