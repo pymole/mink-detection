@@ -18,7 +18,15 @@ def convert_to_jpg(src, dest):
 
 def main(args):
     p = Augmentor.Pipeline(args.input, output_directory=args.output)
+    p.flip_left_right(probability=1.0)
+    p.process()
 
+    p = Augmentor.Pipeline(args.input, output_directory=args.output)
+    p.flip_top_bottom(probability=1.0)
+    p.process()
+
+    p = Augmentor.Pipeline(args.input, output_directory=args.output)
+    p.flip_top_bottom(probability=1.0)
     p.flip_left_right(probability=1.0)
     p.process()
 
