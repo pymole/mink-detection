@@ -5,6 +5,8 @@ import shutil
 
 
 def main(args):
+    random.seed(args.seed)
+
     positive = os.listdir(args.positive)
     random.shuffle(positive)
 
@@ -46,5 +48,6 @@ if __name__ == '__main__':
     parser.add_argument('--positive', type=str)
     parser.add_argument('--negative', type=str)
     parser.add_argument('--positive_train_ratio', type=float)
+    parser.add_argument('--seed', type=int, default=42)
 
     main(parser.parse_args())
