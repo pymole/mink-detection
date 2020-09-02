@@ -7,24 +7,28 @@
 1. Установить python 3.8
 2. Открыть командную строку.
 3. Перейти в папку, где находиться requirements.txt.
-cd путь
+`cd путь`
 4. Создать виртуальное окружение, в которое установяться все нужные зависимости для работы программы
-python -m venv venv
+`python -m venv venv`
 5. Активировать виртуальное окружение
-venv\Scripts\activate.bat
+`venv\Scripts\activate.bat`
 6. Установить все зависимости:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 7. Деактивировать виртуальное окружение
-deactivate
+`deactivate`
 
 Запуск:
-python predictor.py --input input --models models --prediction_timeout 0.5 --archive_period 1
---stats_on_every 6 --archive_directory archive --batch_size 500
+`python predictor.py --input input --models models --prediction_timeout 0.5 --archive_period 1 --stats_on_every 6 --archive_directory archive --batch_size 500`
 
 --input - путь до папки, в которую будут помещаться картинки
+
 --models - путь до папки, в которой находятся обученные модели, использующиеся для предсказания
+
 --prediction_timeout - в секундах насколько часто программа проверяет папку --input и запускает предсказание
+
 --stats_on_every - на какое количество картинок программа будет выводить статистику
+
 --archive_directory - путь до папки, в которую будут помещаться обработанные картинки, для которых будет
 производиться архивация
+
 --archive_period - в секундах насколько часто будет производиться архивация изображений
